@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const { defineConfig } = require('@playwright/test');
 
 module.exports = defineConfig({
@@ -13,13 +15,14 @@ module.exports = defineConfig({
   reporter: 'html',
 
   use: {
+    baseURL: process.env.BASE_URL,
+
     browserName: 'chromium',
     channel: 'chrome',
     headless: true,
 
     screenshot: 'only-on-failure',
-
-    trace: 'on',
+    trace: 'on-first-retry',
   }
 
 });
