@@ -17,7 +17,6 @@ module.exports = defineConfig({
   use: {
     baseURL: process.env.BASE_URL,
 
-    browserName: 'chromium',
     channel: 'chrome',
     headless: true,
 
