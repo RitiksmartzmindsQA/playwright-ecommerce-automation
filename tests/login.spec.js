@@ -2,7 +2,7 @@ import { test } from '@playwright/test';
 import LoginPage from '../pages/LoginPage';
 import loginData from '../test-data/loginData.json';
 
-test('SauceDemo login using POM', async ({ page }) => {
+test('@smoke SauceDemo login using POM', async ({ page }) => {
 
   const loginPage = new LoginPage(page);
 

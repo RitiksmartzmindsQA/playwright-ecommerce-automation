@@ -6,7 +6,7 @@ import CheckoutOverviewPage from '../pages/CheckoutOverviewPage';
 import CheckoutCompletePage from '../pages/CheckoutCompletePage';
 
 
-test('Complete checkout flow', async ({ loggedInPage }) => {
+test('@regression Complete checkout flow', async ({ loggedInPage }) => {
 
     const inventoryPage = new InventoryPage(loggedInPage);
     const cartPage = new CartPage(loggedInPage);

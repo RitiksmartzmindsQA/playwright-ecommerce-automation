@@ -1,7 +1,7 @@
 import { test } from '../fixtures/baseTest';
 import InventoryPage from '../pages/InventoryPage';
 
-test('Add product to cart', async ({ loggedInPage }) => {
+test('@smoke Add product to cart', async ({ loggedInPage }) => {
 
     const inventoryPage = new InventoryPage(loggedInPage);
 

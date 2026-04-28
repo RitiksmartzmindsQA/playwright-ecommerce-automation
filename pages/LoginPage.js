@@ -12,7 +12,7 @@ class LoginPage {
     }
 
     async open() {
-        await this.page.goto('/');
+        await this.page.goto('https://www.saucedemo.com/');
     }
 
     async login(username, password) {
