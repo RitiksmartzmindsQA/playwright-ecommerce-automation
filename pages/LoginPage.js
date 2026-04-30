@@ -13,6 +13,8 @@ class LoginPage {
 
     async open() {
         await this.page.goto('https://www.saucedemo.com/');
+        waitUntil: 'domcontentloaded'
+
     }
 
     async login(username, password) {
