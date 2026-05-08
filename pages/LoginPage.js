@@ -1,20 +1,17 @@
 import { expect } from '@playwright/test';
 
 class LoginPage {
-
     constructor(page) {
         this.page = page;
-        
-        this.usernameInput = page.locator("#user-name");
+        this.usernameInput = page.locator('#user-name');
         this.passwordInput = page.locator('#password');
         this.loginButton = page.locator('#login-button');
-        this.productTitle = page.getByText('products');
+        this.productsTitle = page.getByText('Products');
+        this.errorMessage = page.locator('[data-test="error"]');
     }
 
     async open() {
-        await this.page.goto('https://www.saucedemo.com/');
-        waitUntil: 'domcontentloaded'
-
+        await this.page.goto('/');
     }
 
     async login(username, password) {
@@ -25,9 +22,13 @@ class LoginPage {
 
     async assertLoginSuccess() {
         await expect(this.page).toHaveURL(/inventory\.html/);
-        await expect(this.productTitle).toBeVisible();
+        await expect(this.productsTitle).toBeVisible();
+    }
+
+    async assertLoginError(expectedMessage) {
+        await expect(this.errorMessage).toBeVisible();
+        await expect(this.errorMessage).toHaveText(expectedMessage);
     }
 }
 
 export default LoginPage;
-
