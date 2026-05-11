@@ -2,12 +2,17 @@ import { test } from '../../fixtures/baseTest';
 import InventoryPage from '../../pages/InventoryPage';
 import CartPage from '../../pages/CartPage';
 
+let inventoryPage;
+let cartPage;
+
+test.beforeEach(async ({ loggedInPage }) => {
+    inventoryPage = new InventoryPage(loggedInPage);
+    cartPage = new CartPage(loggedInPage);
+});
+
 test('Verify product added to cart and verify cart badge updated correctly', async ({
     loggedInPage,
 }) => {
-    const inventoryPage = new InventoryPage(loggedInPage);
-    const cartPage = new CartPage(loggedInPage);
-
     await inventoryPage.verifyInventoryPageLoaded();
     await inventoryPage.addBackpackToCart();
     await cartPage.verifyCartBadgeCount('1');
@@ -18,9 +23,6 @@ test('Verify product added to cart and verify cart badge updated correctly', asy
 });
 
 test('Check zero count on empty cart', async ({ loggedInPage }) => {
-    const inventoryPage = new InventoryPage(loggedInPage);
-    const cartPage = new CartPage(loggedInPage);
-
     await inventoryPage.verifyInventoryPageLoaded();
     await inventoryPage.addBackpackToCart();
     await inventoryPage.goToCart();
@@ -33,9 +35,6 @@ test('Check zero count on empty cart', async ({ loggedInPage }) => {
 test('Verify continue shopping redirects to inventory page', async ({
     loggedInPage,
 }) => {
-    const inventoryPage = new InventoryPage(loggedInPage);
-    const cartPage = new CartPage(loggedInPage);
-
     await inventoryPage.verifyInventoryPageLoaded();
     await inventoryPage.goToCart();
 
