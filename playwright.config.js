@@ -13,7 +13,7 @@ module.exports = defineConfig({
     channel: 'chrome',
     headless: true,
     screenshot: 'only-on-failure',
-    trace: 'on-first-retry',
+    trace: 'on',
     storageState: 'storageState.json',
   }
 });
