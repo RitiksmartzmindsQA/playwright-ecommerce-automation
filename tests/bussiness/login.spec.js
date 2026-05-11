@@ -1,6 +1,6 @@
 import { test } from '@playwright/test';
-import LoginPage from '../pages/LoginPage';
-import loginData from '../test-data/loginData.json';
+import LoginPage from '../../pages/LoginPage';
+import loginData from '../../test-data/loginData.json';
 
 test('@smoke Positive login with valid credentials', async ({ page }) => {
 

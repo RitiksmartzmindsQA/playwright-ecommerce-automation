@@ -1,5 +1,5 @@
-import { test } from '../fixtures/baseTest';
-import InventoryPage from '../pages/InventoryPage';
+import { test } from '../../fixtures/baseTest';
+import InventoryPage from '../../pages/InventoryPage';
 
 test('@smoke Add product to cart', async ({ loggedInPage }) => {
 
