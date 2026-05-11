@@ -1,7 +1,6 @@
 import { test, expect } from '@playwright/test';
 
 test('Playwright locator examples', async ({ page }) => {
-
     await page.goto('https://www.saucedemo.com');
 
     // CSS locator
@@ -15,11 +14,9 @@ test('Playwright locator examples', async ({ page }) => {
 
     // Text locator
     await expect(page.getByText('Products')).toBeVisible();
-
 });
 
 test('Advanced locators', async ({ page }) => {
-
     await page.goto('https://www.saucedemo.com');
 
     await page.fill('#user-name', 'standard_user');
@@ -31,9 +28,9 @@ test('Advanced locators', async ({ page }) => {
 
     await expect(product).toBeVisible();
 
-    const backpack = page.locator('.inventory_item')
+    const backpack = page
+        .locator('.inventory_item')
         .filter({ hasText: 'Backpack' });
 
     await expect(backpack).toBeVisible();
-
 });

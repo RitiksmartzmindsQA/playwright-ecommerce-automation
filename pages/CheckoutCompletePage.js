@@ -8,7 +8,9 @@ class CheckoutCompletePage {
     }
 
     async verifyOrderSuccess() {
-        await expect(this.successMessage).toHaveText('Thank you for your order!');
+        await expect(this.successMessage).toHaveText(
+            'Thank you for your order!',
+        );
     }
 }
 

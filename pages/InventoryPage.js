@@ -5,7 +5,9 @@ class InventoryPage {
         this.page = page;
 
         this.productTitle = page.locator('.title');
-        this.backpackAddButton = page.locator('#add-to-cart-sauce-labs-backpack');
+        this.backpackAddButton = page.locator(
+            '#add-to-cart-sauce-labs-backpack',
+        );
         this.cartBadge = page.locator('.shopping_cart_badge');
         this.cartIcon = page.locator('.shopping_cart_link');
     }

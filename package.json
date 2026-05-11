@@ -1,17 +1,31 @@
 {
-  "name": "e-commerce-automation",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {},
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "devDependencies": {
-    "@playwright/test": "^1.59.1",
-    "@types/node": "^25.6.0"
-  },
-  "dependencies": {
-    "dotenv": "^17.4.2"
-  }
+    "name": "e-commerce-automation",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "format": "prettier --write .",
+        "test": "playwright test",
+        "headed": "playwright test --headed",
+        "smoke": "playwright test --grep @smoke",
+        "regression": "playwright test --grep @regression",
+        "report": "playwright show-report",
+        "debug": "playwright test --debug",
+        "trace": "playwright show-trace",
+        "lint": "eslint ."
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "devDependencies": {
+        "@eslint/js": "^10.0.1",
+        "@playwright/test": "^1.59.1",
+        "@types/node": "^25.6.0",
+        "eslint": "^10.3.0",
+        "globals": "^17.6.0",
+        "prettier": "^3.8.3"
+    },
+    "dependencies": {
+        "dotenv": "^17.4.2"
+    }
 }

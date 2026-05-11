@@ -2,8 +2,9 @@ import { test } from '../../fixtures/baseTest';
 import InventoryPage from '../../pages/InventoryPage';
 import CartPage from '../../pages/CartPage';
 
-test('Verify product added to cart and verify cart badge updated correctly', async ({ loggedInPage }) => {
-
+test('Verify product added to cart and verify cart badge updated correctly', async ({
+    loggedInPage,
+}) => {
     const inventoryPage = new InventoryPage(loggedInPage);
     const cartPage = new CartPage(loggedInPage);
 
@@ -14,11 +15,9 @@ test('Verify product added to cart and verify cart badge updated correctly', asy
 
     await cartPage.verifyCartPageLoaded();
     await cartPage.verifyProductInCart('Sauce Labs Backpack');
-
 });
 
 test('Check zero count on empty cart', async ({ loggedInPage }) => {
-
     const inventoryPage = new InventoryPage(loggedInPage);
     const cartPage = new CartPage(loggedInPage);
 
@@ -29,11 +28,11 @@ test('Check zero count on empty cart', async ({ loggedInPage }) => {
     await cartPage.verifyCartPageLoaded();
     await cartPage.removeProductFromCart();
     await cartPage.verifyCartIsEmpty();
-
 });
 
-test('Verify continue shopping redirects to inventory page', async ({ loggedInPage }) => {
-
+test('Verify continue shopping redirects to inventory page', async ({
+    loggedInPage,
+}) => {
     const inventoryPage = new InventoryPage(loggedInPage);
     const cartPage = new CartPage(loggedInPage);
 
@@ -43,5 +42,4 @@ test('Verify continue shopping redirects to inventory page', async ({ loggedInPa
     await cartPage.verifyCartPageLoaded();
     await cartPage.clickContinueShopping();
     await inventoryPage.verifyInventoryPageLoaded();
-
 });

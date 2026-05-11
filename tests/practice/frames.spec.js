@@ -24,11 +24,9 @@ import { test, expect } from '@playwright/test';
 // });
 
 test('Handle iframe using frameLocator', async ({ page }) => {
-
     await page.goto('https://the-internet.herokuapp.com/iframe');
 
     const frame = page.frameLocator('#mce_0_ifr');
 
     await expect(frame.locator('#tinymce')).toBeVisible();
-
 });

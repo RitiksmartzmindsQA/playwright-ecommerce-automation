@@ -1,7 +1,6 @@
 const { chromium } = require('@playwright/test');
 
 async function globalSetup() {
-
     const browser = await chromium.launch();
     const page = await browser.newPage();
 
@@ -15,7 +14,6 @@ async function globalSetup() {
     await page.context().storageState({ path: 'storageState.json' });
 
     await browser.close();
-
 }
 
 module.exports = globalSetup;

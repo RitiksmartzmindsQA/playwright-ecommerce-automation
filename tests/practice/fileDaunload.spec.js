@@ -1,7 +1,6 @@
-import { test, expect } from '@playwright/test';
+import { test } from '@playwright/test';
 
 test('File download example', async ({ page }) => {
-
     await page.goto('https://the-internet.herokuapp.com/download');
 
     const downloadPromise = page.waitForEvent('download');
@@ -13,5 +12,4 @@ test('File download example', async ({ page }) => {
     console.log(await download.suggestedFilename());
 
     await download.saveAs('./downloads/some-file.txt');
-
 });

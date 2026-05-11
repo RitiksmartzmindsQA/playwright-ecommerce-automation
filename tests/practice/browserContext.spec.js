@@ -1,7 +1,6 @@
 import { test, expect } from '@playwright/test';
 
 test('Multiple browser contexts example', async ({ browser }) => {
-
     // create two independent browser sessions
     const context1 = await browser.newContext();
     const context2 = await browser.newContext();
@@ -16,5 +15,4 @@ test('Multiple browser contexts example', async ({ browser }) => {
     // verify both sessions work
     await expect(page1).toHaveTitle(/Swag Labs/);
     await expect(page2).toHaveTitle(/Swag Labs/);
-
 });
